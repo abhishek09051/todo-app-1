@@ -25,6 +25,9 @@ services:
       - "8000:8000"
     environment:
       DATABASE_URL: postgresql://todouser:todopassword@db:5432/tododb
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
     depends_on:
       db:
         condition: service_healthy
